@@ -1,8 +1,19 @@
 #!/bin/bash
-if [[ $# -eq 2 ]]; then
-	resultado = 
+
+# comprueba que el primer parámetro sea un número
+numeros='^[0-9]+$'
+if [[ $1 =~ $numeros ]]; then
+
+	# comprueba si se han pasado dos parámetros
+	if [[ $# -eq 2 ]]; then
+		echo "$1 + $2 = $(($1 + $2))"
+	else
+		echo "ERROR: Debes pasar dos parámetros."
+		echo "Forma correcta de ejecutar el script:"
+		echo "		./ejercicio2.sh [número] [número]"
+	fi
 else
-	echo "ERROR: Debes pasar dos parametros"
-	echo "Debes ejecutar el script de la siguiente forma:"
-	echo "./ejercicio2.sh [numero] [numero]"
+	echo "ERROR: Debes pasar dos parámetros que sean números."
+	echo "Forma correcta de ejecutar el script:"
+	echo "	./ejercicio2.sh [número] [número]"
 fi
