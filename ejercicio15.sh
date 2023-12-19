@@ -9,6 +9,12 @@ if [[ $# -eq 1 ]]; then
             echo "$i es un directorio"
         elif [[ -f $i ]]; then
             echo "$i es un fichero"
+        elif [[ -b $i ]]; then
+            echo "$i es un bloque especial"
+        elif [[ -c $i ]]; then
+            echo "$i es un archivo especial de carácter"
+        elif [[ -h $i ]]; then
+            echo "$i es un enlace simbólico"
         fi
         ((count++))
     done
