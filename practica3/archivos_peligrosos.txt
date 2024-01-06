@@ -1,0 +1,1 @@
+/home/mojitoparty/ejercicios_bash/practica3/soy_malo.txt
